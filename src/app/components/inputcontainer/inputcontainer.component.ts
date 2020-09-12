@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MatFormField} from '@angular/material/form-field';
 import {MatInput} from '@angular/material/input';
 import {FormControl, FormGroup, Validators, ReactiveFormsModule} from '@angular/forms';
@@ -15,7 +15,8 @@ export class InputcontainerComponent implements OnInit {
   lastName = new FormControl('', [Validators.required]);
   email = new FormControl('', [Validators.required, Validators.email]);
   postalCode = new FormControl('', [Validators.required, Validators.pattern(/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/)]);
-  myForm: FormGroup = new FormGroup({email: this.email});
+  @Input() myForm: FormGroup = new FormGroup({email: this.email, firstName: this.firstName,
+                                                    lastName: this.lastName, postalCode: this.postalCode});
   getFirstNameErrorMessage(): string {
     if (this.firstName.hasError('required')) {
       return 'You must enter a value';
