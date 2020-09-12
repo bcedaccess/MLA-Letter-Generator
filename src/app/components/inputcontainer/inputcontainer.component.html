@@ -23,5 +23,12 @@
         <input matInput [formControl]="postalCode" required>
         <mat-error *ngIf="postalCode.invalid">{{getPostalCodeErrorMessage()}}</mat-error>
       </mat-form-field>
+
   </form>
+
+
+
+  <mat-form-field style="width: 100%">
+    <textarea matInput>{{letterText}}</textarea>
+  </mat-form-field>
 </div>

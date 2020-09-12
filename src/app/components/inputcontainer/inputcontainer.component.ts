@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {MatFormField} from '@angular/material/form-field';
 import {MatInput} from '@angular/material/input';
 import {FormControl, FormGroup, Validators, ReactiveFormsModule} from '@angular/forms';
+import {LetterText} from '../lettertext';
 
 @Component({
   selector: 'app-inputcontainer',
@@ -11,6 +12,8 @@ import {FormControl, FormGroup, Validators, ReactiveFormsModule} from '@angular/
 export class InputcontainerComponent implements OnInit {
 
   constructor() { }
+  letterText = LetterText.text;
+  letter = new FormControl('');
   firstName = new FormControl('', [Validators.required]);
   lastName = new FormControl('', [Validators.required]);
   email = new FormControl('', [Validators.required, Validators.email]);
