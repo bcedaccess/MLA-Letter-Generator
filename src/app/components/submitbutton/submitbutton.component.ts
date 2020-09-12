@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-submitbutton',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubmitbuttonComponent implements OnInit {
 
+  emailInput: FormControl;
+  postalCodeInput: FormControl;
+  firstNameInput: FormControl;
+  lastNameInput: FormControl;
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
