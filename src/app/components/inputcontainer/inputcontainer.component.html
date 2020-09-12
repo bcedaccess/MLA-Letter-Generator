@@ -1,0 +1,27 @@
+<div style="width: 100%">
+  <form [formGroup]="myForm">
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput required [formControl]="firstName">
+        <mat-error *ngIf="firstName.invalid">{{getFirstNameErrorMessage()}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matInput required [formControl]="lastName">
+        <mat-error *ngIf="lastName.invalid">{{getLastNameErrorMessage()}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Email </mat-label>
+        <input matInput [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Postal Code</mat-label>
+        <input matInput [formControl]="postalCode" required>
+        <mat-error *ngIf="postalCode.invalid">{{getPostalCodeErrorMessage()}}</mat-error>
+      </mat-form-field>
+  </form>
+</div>
