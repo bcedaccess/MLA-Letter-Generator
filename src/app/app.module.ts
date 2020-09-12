@@ -13,6 +13,7 @@ import {MatInputModule} from '@angular/material/input';
 import {ReactiveFormsModule} from '@angular/forms';
 import { SubmitbuttonComponent } from './components/submitbutton/submitbutton.component';
 import {MatButtonModule} from '@angular/material/button';
+import { LetterareaComponent } from './components/letterarea/letterarea.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {MatButtonModule} from '@angular/material/button';
     TextboxComponent,
     InputcontainerComponent,
     SubmitbuttonComponent,
+    LetterareaComponent,
   ],
   imports: [
     BrowserModule,
