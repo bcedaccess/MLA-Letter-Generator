@@ -7,18 +7,28 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { TextboxComponent } from './components/textbox/textbox.component';
+import { InputcontainerComponent } from './components/inputcontainer/inputcontainer.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {ReactiveFormsModule} from '@angular/forms';
+import { SubmitbuttonComponent } from './components/submitbutton/submitbutton.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    TextboxComponent
+    TextboxComponent,
+    InputcontainerComponent,
+    SubmitbuttonComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatGridListModule
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
