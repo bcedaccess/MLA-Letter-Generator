@@ -24,14 +24,31 @@ export class SubmitbuttonComponent implements OnInit {
       console.log('OH NO');
     }
     const firstName: FormControl = this.inputsFormGroup.firstName;
-    if (firstName.invalid){
-
-      this.inputsFormGroup.getFirstNameErrorMessage();
-    }
-
     const lastName: FormControl = this.inputsFormGroup.lastName;
     const email: FormControl = this.inputsFormGroup.email;
     const postalCode: FormControl = this.inputsFormGroup.postalCode;
+    let invalid = false;
+    if (firstName.invalid){
+      this.inputsFormGroup.firstName.markAsTouched();
+      invalid = true;
+    }
+    if (lastName.invalid){
+      this.inputsFormGroup.lastName.markAsTouched();
+      invalid = true;
+    }
+    if (email.invalid){
+      this.inputsFormGroup.email.markAsTouched();
+      invalid = true;
+    }
+    if (postalCode.invalid){
+      this.inputsFormGroup.postalCode.markAsTouched();
+      invalid = true;
+    }
+    if (invalid){
+      return;
+    }
+
+
     console.log(firstName.value, lastName.value, email.value, postalCode.value);
 
   }
