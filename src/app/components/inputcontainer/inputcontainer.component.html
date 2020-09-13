@@ -27,6 +27,11 @@
   </form>
   <div style="width: 100%">
     <h4>Representatives</h4>
+    <div id = "#repConatiner" style = "width: 100%"></div>
+    <mat-radio-button matInput [formControl]="radioButtons" *ngFor="let member of members" [value]="selected">
+      {{member}}
+    </mat-radio-button>
+
   </div>
 
 

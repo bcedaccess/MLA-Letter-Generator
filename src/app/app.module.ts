@@ -15,6 +15,7 @@ import { SubmitbuttonComponent } from './components/submitbutton/submitbutton.co
 import {MatButtonModule} from '@angular/material/button';
 import { LetterareaComponent } from './components/letterarea/letterarea.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatInputModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

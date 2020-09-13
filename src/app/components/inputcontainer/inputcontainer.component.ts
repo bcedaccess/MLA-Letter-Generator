@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {MatFormField} from '@angular/material/form-field';
 import {MatInput} from '@angular/material/input';
 import {FormControl, FormGroup, Validators, ReactiveFormsModule} from '@angular/forms';
@@ -9,10 +9,13 @@ import {LetterText} from '../lettertext';
   templateUrl: './inputcontainer.component.html',
   styleUrls: ['./inputcontainer.component.css']
 })
-export class InputcontainerComponent implements OnInit {
+export class InputcontainerComponent implements OnInit, AfterViewInit {
 
   constructor() { }
+  members = [];
+  selected;
   letterText = LetterText.text;
+  radioButtons = new FormControl('', [Validators.required] );
   letter = new FormControl('');
   firstName = new FormControl('', [Validators.required]);
   lastName = new FormControl('', [Validators.required]);
@@ -20,6 +23,7 @@ export class InputcontainerComponent implements OnInit {
   postalCode = new FormControl('', [Validators.required, Validators.pattern(/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/)]);
   @Input() myForm: FormGroup = new FormGroup({email: this.email, firstName: this.firstName,
                                                     lastName: this.lastName, postalCode: this.postalCode});
+  myDiv: HTMLElement;
   getFirstNameErrorMessage(): string {
     if (this.firstName.hasError('required')) {
       return 'You must enter a value';
@@ -45,6 +49,13 @@ export class InputcontainerComponent implements OnInit {
       return 'You must enter a value';
     }
     return this.postalCode.hasError('pattern') ? 'Not a valid postal code' : '';
+  }
+
+  getRadioButtonErrorMessage(): string {
+    if (this.radioButtons.hasError('required')) {
+      return 'You must enter a value';
+    }
+
   }
 
   onPostalCodeChange(): void {
@@ -73,6 +84,10 @@ export class InputcontainerComponent implements OnInit {
     }).then((mlas) => {
       console.log(mlas);
 
+      mlas.forEach((m) => {
+        this.members.push(m.name);
+      });
+
 
     });
 
@@ -80,7 +95,11 @@ export class InputcontainerComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.myDiv = document.getElementById('#repConatiner');
+  }
 
+
+  ngAfterViewInit(): void {
   }
 
 
