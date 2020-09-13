@@ -13,7 +13,6 @@ import {MatInputModule} from '@angular/material/input';
 import {ReactiveFormsModule} from '@angular/forms';
 import { SubmitbuttonComponent } from './components/submitbutton/submitbutton.component';
 import {MatButtonModule} from '@angular/material/button';
-import { LetterareaComponent } from './components/letterarea/letterarea.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 
@@ -25,7 +24,6 @@ import {MatRadioModule} from '@angular/material/radio';
     TextboxComponent,
     InputcontainerComponent,
     SubmitbuttonComponent,
-    LetterareaComponent,
   ],
   imports: [
     BrowserModule,
