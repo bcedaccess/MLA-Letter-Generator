@@ -47,25 +47,7 @@ export class SubmitbuttonComponent implements OnInit {
     if (invalid){
       return;
     }
-    const pc: string = postalCode.value.toString().toUpperCase().replace(/\s/g, '');
-    console.log(pc);
-    fetch(`https://represent.opennorth.ca/postcodes/${pc}/`).then((response) => {
-      return response.json();
-    }).then((json) => {
-      // console.log(json);
-      const reps = json.representatives_centroid;
-      const mlas = [];
-      reps.forEach((rep) => {
-        if (rep.elected_office === 'MLA'){
-          console.log(rep);
-          mlas.push(rep);
-        }
-      });
-      return mlas;
-    }).then((mlas) => {
 
-
-    });
 
 
   }

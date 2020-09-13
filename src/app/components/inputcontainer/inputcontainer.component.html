@@ -20,7 +20,7 @@
 
       <mat-form-field>
         <mat-label>Postal Code</mat-label>
-        <input matInput [formControl]="postalCode" required>
+        <input matInput [formControl]="postalCode" required (input)="onPostalCodeChange()">
         <mat-error *ngIf="postalCode.invalid">{{getPostalCodeErrorMessage()}}</mat-error>
       </mat-form-field>
 

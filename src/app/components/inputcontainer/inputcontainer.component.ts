@@ -47,6 +47,38 @@ export class InputcontainerComponent implements OnInit {
     return this.postalCode.hasError('pattern') ? 'Not a valid postal code' : '';
   }
 
+  onPostalCodeChange(): void {
+    if (this.postalCode.invalid){
+      console.log('Postal not done');
+      return;
+    }
+    else{
+      console.log('Postal Code Done.');
+    }
+    const pc: string = this.postalCode.value.toString().toUpperCase().replace(/\s/g, '');
+    console.log(pc);
+    fetch(`https://represent.opennorth.ca/postcodes/${pc}/`).then((response) => {
+      return response.json();
+    }).then((json) => {
+      // console.log(json);
+      const reps = json.representatives_centroid;
+      const mlas = [];
+      reps.forEach((rep) => {
+        if (rep.elected_office === 'MLA'){
+          console.log(rep);
+          mlas.push(rep);
+        }
+      });
+      return mlas;
+    }).then((mlas) => {
+      console.log(mlas);
+
+
+    });
+
+
+  }
+
   ngOnInit(): void {
 
   }
