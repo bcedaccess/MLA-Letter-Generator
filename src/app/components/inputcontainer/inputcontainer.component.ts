@@ -22,7 +22,8 @@ export class InputcontainerComponent implements OnInit, AfterViewInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   postalCode = new FormControl('', [Validators.required, Validators.pattern(/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/)]);
   @Input() myForm: FormGroup = new FormGroup({email: this.email, firstName: this.firstName,
-                                                    lastName: this.lastName, postalCode: this.postalCode});
+                                                    lastName: this.lastName, postalCode: this.postalCode,
+                                                      radiobuttons: this.radioButtons});
   myDiv: HTMLElement;
   getFirstNameErrorMessage(): string {
     if (this.firstName.hasError('required')) {
