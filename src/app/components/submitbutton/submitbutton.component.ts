@@ -23,13 +23,14 @@ export class SubmitbuttonComponent implements OnInit {
     if (this.inputsFormGroup == null){
       console.log('OH NO');
     }
+    const ass = this.inputsFormGroup.selectedMember;
     const selected: FormControl = this.inputsFormGroup.radioButtons;
     const firstName: FormControl = this.inputsFormGroup.firstName;
     const lastName: FormControl = this.inputsFormGroup.lastName;
     const email: FormControl = this.inputsFormGroup.email;
     const postalCode: FormControl = this.inputsFormGroup.postalCode;
     let invalid = false;
-    console.log('SELECTED: ' , selected);
+    console.log('SELECTED: ' , ass);
     if (firstName.invalid){
       this.inputsFormGroup.firstName.markAsTouched();
       invalid = true;

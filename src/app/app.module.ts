@@ -10,7 +10,7 @@ import { TextboxComponent } from './components/textbox/textbox.component';
 import { InputcontainerComponent } from './components/inputcontainer/inputcontainer.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SubmitbuttonComponent } from './components/submitbutton/submitbutton.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -35,6 +35,7 @@ import {MatRadioModule} from '@angular/material/radio';
     MatButtonModule,
     MatCheckboxModule,
     MatRadioModule,
+    FormsModule,
 
   ],
   providers: [],

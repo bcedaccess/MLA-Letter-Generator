@@ -12,6 +12,7 @@ import {LetterText} from '../lettertext';
 export class InputcontainerComponent implements OnInit, AfterViewInit {
 
   constructor() { }
+  selectedMember: string;
   members = [];
   selected;
   letterText = LetterText.text;
