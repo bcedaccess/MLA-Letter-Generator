@@ -3,6 +3,7 @@ import {MatFormField} from '@angular/material/form-field';
 import {MatInput} from '@angular/material/input';
 import {FormControl, FormGroup, Validators, ReactiveFormsModule} from '@angular/forms';
 import {LetterText} from '../lettertext';
+import {MatRadioGroup} from '@angular/material/radio';
 
 @Component({
   selector: 'app-inputcontainer',
@@ -13,8 +14,10 @@ export class InputcontainerComponent implements OnInit, AfterViewInit {
 
   constructor() { }
   selectedMember: string;
+  member;
   members = [];
-  selected;
+  mpData = new Map();
+  @ViewChild('radioGroup') radioGroup: MatRadioGroup;
   letterText = LetterText.text;
   radioButtons = new FormControl('', [Validators.required] );
   letter = new FormControl('');
@@ -84,11 +87,14 @@ export class InputcontainerComponent implements OnInit, AfterViewInit {
       });
       return mlas;
     }).then((mlas) => {
-      console.log(mlas);
+      this.members = [];
 
       mlas.forEach((m) => {
-        this.members.push(m.name);
+        this.members.push(m.name + ', ' + m.party_name);
+        this.mpData.set(m.name + ', ' + m.party_name, m);
       });
+
+
 
 
     });
@@ -105,5 +111,12 @@ export class InputcontainerComponent implements OnInit, AfterViewInit {
   }
 
 
+  onCheck(): void {
+    this.selectedMember = this.members[0];
+  }
 
+
+  onRadioChange(): void {
+
+  }
 }

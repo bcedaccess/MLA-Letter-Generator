@@ -26,9 +26,9 @@
 
   </form>
   <div style="width: 100%">
-    <h4>Representatives</h4>
+    <h4>Select Your Representative</h4>
     <div id = "#repConatiner" style = "width: 100%"></div>
-    <mat-radio-group [(ngModel)]="selectedMember">
+    <mat-radio-group [(ngModel)]="selectedMember" [formControl]="radioButtons" #radioGroup  (change)="onRadioChange()">
       <mat-radio-button matInput ngDefaultControl *ngFor="let member of members" [value]="member">
         {{member}}
       </mat-radio-button>

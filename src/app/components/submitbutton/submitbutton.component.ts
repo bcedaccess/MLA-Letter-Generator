@@ -47,9 +47,15 @@ export class SubmitbuttonComponent implements OnInit {
       this.inputsFormGroup.postalCode.markAsTouched();
       invalid = true;
     }
+    if (!ass){
+      invalid = true;
+    }
     if (invalid){
       return;
     }
+    console.log('SUCCESS', this.inputsFormGroup.mpData.get(ass));
+
+
 
 
 
