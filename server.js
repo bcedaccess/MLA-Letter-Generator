@@ -5,11 +5,11 @@ const path = require('path');
 const app = express();
 
 // Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/dist/mla-letter-generator'));
+app.use(express.static(__dirname + '/dist/MLA-Letter-Generatorr'));
 
 app.get('/*', function(req,res) {
 
-  res.sendFile(path.join(__dirname+'/dist/mla-letter-generator/index.html'));
+  res.sendFile(path.join(__dirname+'/dist/MLA-Letter-Generator/index.html'));
 });
 
 // Start the app by listening on the default Heroku port
