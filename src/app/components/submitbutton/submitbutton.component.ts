@@ -3,6 +3,7 @@ import {Form, FormControl, FormGroup} from '@angular/forms';
 import {InputcontainerComponent} from '../inputcontainer/inputcontainer.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {first} from 'rxjs/operators';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-submitbutton',
@@ -12,7 +13,7 @@ import {first} from 'rxjs/operators';
 export class SubmitbuttonComponent implements OnInit {
 
   @Input() inputsFormGroup: InputcontainerComponent;
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
 
@@ -54,6 +55,11 @@ export class SubmitbuttonComponent implements OnInit {
       return;
     }
     const mpData = this.inputsFormGroup.mpData.get(mp);
+    this.http.post('./send/', { title: 'Angular POST Request Example' }).subscribe(data => {
+      console.log(data);
+    });
+
+
 
 
 
