@@ -34,11 +34,6 @@ const transporter = nodemailer.createTransport({
 
 
 app.post('/send', (req, res) => {
-  console.log("EMAIL POST");
-
-  console.log(req.body);
-  res.json(req.body);
-
 
   const data = req.body;
   if(!data.mp.email){
@@ -54,9 +49,9 @@ app.post('/send', (req, res) => {
   };
   transporter.sendMail(mailOptions, function (err, info) {
     if(err)
-      console.log(err)
+      res.error();
     else
-      console.log(info);
+      res.json(info);
   });
 
 
