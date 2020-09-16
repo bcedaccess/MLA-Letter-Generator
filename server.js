@@ -37,21 +37,27 @@ app.post('/send', (req, res) => {
   console.log("EMAIL POST");
 
   console.log(req.body);
-  res.json(req.body)
+  res.json(req.body);
 
 
-  // const mailOptions = {
-  //   from: 'sender@email.com', // sender address
-  //   to: 'ericnewton2251@gmail.com', // list of receivers
-  //   subject: 'Subject of your email', // Subject line
-  //   html: '<p>Your html here</p>'// plain text body
-  // };
-  // transporter.sendMail(mailOptions, function (err, info) {
-  //   if(err)
-  //     console.log(err)
-  //   else
-  //     console.log(info);
-  // });
+  const data = req.body;
+  if(!data.mp.email){
+    //MP has no email on record.
+  }
+
+  const mailOptions = {
+    from: data.email, // sender address
+    to: data.mp.email, // list of receivers
+    cc: 'letters@bcedaccess.com',
+    subject: 'Subject of your email', // Subject line
+    text: data.letterData// plain text body
+  };
+  transporter.sendMail(mailOptions, function (err, info) {
+    if(err)
+      console.log(err)
+    else
+      console.log(info);
+  });
 
 
 })
