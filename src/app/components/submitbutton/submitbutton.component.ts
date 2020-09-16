@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {InputcontainerComponent} from '../inputcontainer/inputcontainer.component';
 import {HttpClient} from '@angular/common/http';
+import {SnackBarService} from '../snackbar.service';
 
 @Component({
   selector: 'app-submitbutton',
@@ -17,7 +18,7 @@ export class SubmitbuttonComponent implements OnInit {
   mpNameMark = '[MP_NAME]';
 
   @Input() inputsFormGroup: InputcontainerComponent;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private snackbar: SnackBarService) { }
 
   ngOnInit(): void {
 
