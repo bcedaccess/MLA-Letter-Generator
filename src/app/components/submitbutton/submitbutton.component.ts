@@ -54,6 +54,7 @@ export class SubmitbuttonComponent implements OnInit {
     }
     if (!mp){
       invalid = true;
+      this.snackbar.openSnackBar('Please Select a Representative', 'Dismiss');
     }
     if (invalid){
       return;
