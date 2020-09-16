@@ -2,7 +2,7 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
-var nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
 
 
 const app = express();
@@ -23,7 +23,7 @@ if(!process.env.PRODUCTION){
 }
 app.use(express.json());
 
-var transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_HOST,
   auth: {
     user: process.env.EMAIL_USER,
