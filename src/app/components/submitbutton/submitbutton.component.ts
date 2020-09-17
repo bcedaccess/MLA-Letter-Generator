@@ -1,34 +1,40 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit, Output, ViewChild, EventEmitter} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {InputcontainerComponent} from '../inputcontainer/inputcontainer.component';
 import {HttpClient} from '@angular/common/http';
 import {SnackBarService} from '../snackbar.service';
+
 
 @Component({
   selector: 'app-submitbutton',
   templateUrl: './submitbutton.component.html',
   styleUrls: ['./submitbutton.component.css']
 })
-export class SubmitbuttonComponent implements OnInit {
+export class SubmitbuttonComponent implements OnInit, AfterViewInit {
 
-  firstNameMark = '[FIRST_NAME]';
-  lastNameMark = '[LAST_NAME]';
-  emailNameMark = '[EMAIL]';
-  pcMark = '[POSTAL_CODE]';
-  mpNameMark = '[MP_NAME]';
-
+  firstNameMark = '[your name will go here]';
+  emailNameMark = '[your email address will go here]';
+  pcMark = '[your location will go here]';
+  mpNameMark = '[MLA’s name will go here]';
+  @Output() eventEmitter = new EventEmitter<Event>();
   @Input() inputsFormGroup: InputcontainerComponent;
+  @Input() event: Event;
   constructor(private http: HttpClient, private snackbar: SnackBarService) { }
+
+  ngAfterViewInit(): void {
+    }
 
   ngOnInit(): void {
 
 
   }
 
-  onClick(): void {
+  onClick(event: Event): void {
     if (this.inputsFormGroup == null){
       console.log('OH NO');
     }
+    // TODO: Finish up having a thank you page on a successful email
+    // https://medium.com/@pandukamuditha/angular-5-share-data-between-sibling-components-using-eventemitter-8ebb49b64a0a
     const mp = this.inputsFormGroup.selectedMember;
     const firstName: FormControl = this.inputsFormGroup.firstName;
     const lastName: FormControl = this.inputsFormGroup.lastName;
@@ -62,8 +68,11 @@ export class SubmitbuttonComponent implements OnInit {
     const mpData = this.inputsFormGroup.mpData.get(mp);
     const data = this.createPostData(firstName, lastName, email, postalCode, mpData);
     console.log('data', data);
-    this.http.post<any>('./send/', data).subscribe(res => {
-      console.log(res);
+    this.http.post<any>('./send/', data).subscribe(() => {
+      this.eventEmitter.emit(event);
+
+    }, (res) => {
+      this.snackbar.openSnackBar('Something went wrong: ' + res, 'Dismiss');
 
     });
 
@@ -84,19 +93,17 @@ export class SubmitbuttonComponent implements OnInit {
       email: email.value,
       postalcode: postalCode.value,
       mp: mpData,
-      letterData: ''
+      letterData: this.convertLetterString(firstName.value, lastName.value, email.value, postalCode.value, mpData)
     };
-    data.letterData = this.convertLetterString(data);
     return data;
   }
 
-  private convertLetterString(data): string {
+  private convertLetterString(firstname, lastname, email, postalcode, mp): string {
     let letter: string = this.inputsFormGroup.letter.value;
-    letter = letter.replace(this.firstNameMark, data.firstname);
-    letter = letter.replace(this.lastNameMark, data.lastname);
-    letter = letter.replace(this.emailNameMark, data.email);
-    letter = letter.replace(this.pcMark, data.postalcode);
-    letter = letter.replace(this.mpNameMark, data.mp.name);
+    letter = letter.replace(this.firstNameMark, firstname + ' ' + lastname);
+    letter = letter.replace(this.emailNameMark, email);
+    letter = letter.replace(this.pcMark, postalcode);
+    letter = letter.replace(this.mpNameMark, mp.name);
 
     return letter;
   }

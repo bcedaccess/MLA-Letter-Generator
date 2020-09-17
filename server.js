@@ -44,14 +44,18 @@ app.post('/send', (req, res) => {
     from: data.email, // sender address
     to: data.mp.email, // list of receivers
     cc: 'letters@bcedaccess.com',
-    subject: 'Subject of your email', // Subject line
+    subject: 'Education Assistants in BC', // Subject line
     text: data.letterData// plain text body
   };
   transporter.sendMail(mailOptions, function (err, info) {
-    if(err)
+    if(err) {
+      res.status(400);
       res.error();
-    else
+    }
+    else {
+      res.status(200);
       res.json(info);
+    }
   });
 
 

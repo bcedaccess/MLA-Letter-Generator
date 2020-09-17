@@ -1,1 +1,1 @@
-<button mat-raised-button (click)="onClick()" style = "width: 100%">Submit</button>
+<button mat-raised-button (click)="onClick($event)" style = "width: 100%" *ngIf="!event">Send to your MLA</button>

@@ -13,6 +13,7 @@ import {MatRadioGroup} from '@angular/material/radio';
 export class InputcontainerComponent implements OnInit, AfterViewInit {
 
   constructor() { }
+  @Input() event: Event;
   selectedMember: string;
   member;
   members = [];
@@ -27,7 +28,7 @@ export class InputcontainerComponent implements OnInit, AfterViewInit {
   postalCode = new FormControl('', [Validators.required, Validators.pattern(/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/)]);
   @Input() myForm: FormGroup = new FormGroup({email: this.email, firstName: this.firstName,
                                                     lastName: this.lastName, postalCode: this.postalCode,
-                                                      radiobuttons: this.radioButtons});
+                                                      radiobuttons: this.radioButtons, letter: this.letter});
   myDiv: HTMLElement;
   getFirstNameErrorMessage(): string {
     if (this.firstName.hasError('required')) {
@@ -104,6 +105,7 @@ export class InputcontainerComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.myDiv = document.getElementById('#repConatiner');
+    this.letter.setValue(this.letterText);
   }
 
 

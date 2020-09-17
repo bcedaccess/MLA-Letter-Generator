@@ -1,10 +1,10 @@
 
-<div style = "padding: 2% 5%">
+<div style = "padding: 2% 5%" *ngIf="!event">
   <div style="width: 100%;">
     <h1>{{title}}</h1>
   </div>
-  <div>
-    <p>{{description}}</p>
+  <div [innerHTML]="description">
+
   </div>
 </div>
 

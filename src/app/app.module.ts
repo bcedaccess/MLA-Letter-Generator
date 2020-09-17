@@ -16,6 +16,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {HttpClientModule} from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ThankyoupageComponent } from './components/thankyoupage/thankyoupage.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     TextboxComponent,
     InputcontainerComponent,
     SubmitbuttonComponent,
+    ThankyoupageComponent,
   ],
   imports: [
     BrowserModule,
