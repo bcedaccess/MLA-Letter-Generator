@@ -4,13 +4,13 @@ export class LetterText {
     'Education Assistants play a crucial role in our education system – they support all students, and ' +
     'predominantly children with disabilities. To date, there are no standards of practice for Education ' +
     'Assistants in BC. Provincially mandated standards of practice for Education Assistants are overdue. ' +
-    'Standards will contribute to a high quality of education and ultimately will protect all children. ' +
+    'Standards will contribute to a high quality of education and ultimately will protect all children. \n\n' +
     'As a vital member of the teaching team, Education Assistants need consistent training prior to being ' +
     'hired, along with better working conditions.\n\n' +
     'At this point, post-secondary education programs for Education Assistants vary so greatly that skill sets ' +
     'are inconsistent. Current programs range from 2 weeks to 45 weeks in length. With this extreme ' +
     'variation, Education Assistants do not begin their careers with the same skill sets. This directly impacts ' +
-    'all students, their families, and the education team. ' +
+    'all students, their families, and the education team.\n\n ' +
     'There are risks associated with not having standards of practice for Education Assistants. Students are at ' +
     'risk of not meeting their potential for success, may experience trauma, physical harm or PTSD. ' +
     'According to Worksafe BC 1 , staff are also put at risk of physical, mental, and emotional harm including ' +

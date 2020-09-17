@@ -8,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class TextboxComponent implements OnInit {
 
-  title = 'MLA Letter Generator';
+  title = 'Education Assistants need Standards of Practice';
   description = 'Education Assistants play a crucial role in our education system – they support all students, and ' +
     'predominantly children with disabilities. <strong>To date, there are no standards of practice for ' +
     'Education Assistants in BC</strong>. Provincially mandated standards of practice for Education ' +
