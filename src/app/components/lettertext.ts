@@ -1,14 +1,33 @@
 export class LetterText {
 
-  public static text: string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pharetra dui vitae nisl aliquam sodales. Aliquam fermentum accumsan nisl, eget sollicitudin odio eleifend eget. Pellentesque sit amet metus a nibh luctus pellentesque nec non felis. Vestibulum auctor pulvinar lacus eu tristique. Nullam sit amet quam augue. In gravida, libero id aliquam congue, nunc ligula gravida urna, id tincidunt lacus metus sed tellus. Integer lobortis malesuada diam, in tincidunt justo feugiat vitae. Fusce diam massa, mollis in auctor ut, posuere quis neque. Phasellus ultricies felis in porttitor congue. Maecenas vestibulum faucibus neque in fermentum. Maecenas id tempus ante. Proin mattis dignissim felis non accumsan. Maecenas nec diam dictum, semper sapien dictum, accumsan est. Nam vitae lacus maximus, elementum enim sed, convallis odio. In id ligula sit amet magna eleifend accumsan.\n' +
-    '\n' +
-    'Curabitur velit quam, euismod sed tellus sed, sollicitudin mattis orci. Morbi non neque nulla. Morbi tristique leo non ex ornare, a lobortis purus pretium. Nunc tempus, elit at porttitor faucibus, arcu felis malesuada mauris, sodales ornare sapien arcu quis magna. Duis in volutpat ante. Donec semper dui a metus lacinia, id lobortis lectus pellentesque. Nam fermentum mollis elit nec molestie. Fusce quam ipsum, malesuada sed leo non, pretium viverra purus. Pellentesque ut condimentum nulla. Donec malesuada mi tellus, ut hendrerit dui commodo vel. Pellentesque eleifend felis vel malesuada ultrices.\n' +
-    '\n' +
-    'Ut eleifend volutpat mauris, non hendrerit odio egestas quis. Praesent rhoncus, ipsum vel blandit tempus, sapien ipsum convallis turpis, in condimentum mauris tortor id eros. Phasellus et augue pretium, dictum ex consequat, finibus ante. Morbi pharetra, nisl eu ornare accumsan, ex odio fermentum est, vel dignissim est nisl ut turpis. Praesent porta vehicula mauris eget malesuada. Ut at ante non metus fermentum congue. Curabitur dictum orci lacus, eu posuere eros bibendum et. Donec est augue, mollis vitae nibh vel, porttitor vehicula odio.\n' +
-    '\n' +
-    'Sed mauris ligula, euismod eu erat sit amet, consequat accumsan lectus. Donec rhoncus vitae odio sed bibendum. Quisque pulvinar rhoncus odio, et accumsan purus sodales eget. Fusce feugiat augue ornare dui viverra sollicitudin. Donec eu congue turpis. Quisque dapibus libero lacus, in finibus nisi consectetur sed. Etiam efficitur mauris nec ex cursus volutpat et a metus. Integer vel ornare velit. Sed iaculis dignissim nulla sit amet interdum. Nunc non leo urna.\n' +
-    '\n' +
-    'Pellentesque ullamcorper enim est, in congue elit hendrerit sit amet. Aliquam ut consequat augue. Suspendisse potenti. Nulla fringilla id risus eget iaculis. Integer vitae tempor est. Integer id libero mattis, rhoncus urna eget, blandit tellus. In finibus eget erat vitae molestie. Integer dictum, odio ut posuere rutrum, nulla neque elementum velit, sit amet gravida mi ex ut velit. Nunc non tellus tincidunt, luctus justo quis, viverra massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam porta volutpat urna nec rhoncus. Nullam eget metus massa.';
-
+  public static text: string = 'Dear [MLA’s name will go here],\n' +
+    'Education Assistants play a crucial role in our education system – they support all students, and ' +
+    'predominantly children with disabilities. To date, there are no standards of practice for Education ' +
+    'Assistants in BC. Provincially mandated standards of practice for Education Assistants are overdue. ' +
+    'Standards will contribute to a high quality of education and ultimately will protect all children. ' +
+    'As a vital member of the teaching team, Education Assistants need consistent training prior to being ' +
+    'hired, along with better working conditions.\n\n' +
+    'At this point, post-secondary education programs for Education Assistants vary so greatly that skill sets ' +
+    'are inconsistent. Current programs range from 2 weeks to 45 weeks in length. With this extreme ' +
+    'variation, Education Assistants do not begin their careers with the same skill sets. This directly impacts ' +
+    'all students, their families, and the education team. ' +
+    'There are risks associated with not having standards of practice for Education Assistants. Students are at ' +
+    'risk of not meeting their potential for success, may experience trauma, physical harm or PTSD. ' +
+    'According to Worksafe BC 1 , staff are also put at risk of physical, mental, and emotional harm including ' +
+    'PTSD.\n\n' +
+    'Teachers, nurses, health care aides, and even nail technicians have standards of practice. Early ' +
+    'Childhood Educators (ECE) – a parallel discipline to Education Assistants – also have standards of ' +
+    'practice currently regulated by our provincial government. The framework exists. Any work that is ' +
+    'required of a person that impacts the wellbeing of others and that involves potential risk to themselves, ' +
+    'has standards of practice, that is, except for Education Assistants. This is a safety issue. This is ' +
+    'unacceptable.\n\n' +
+    'Consistently educated, knowledgeable Education Assistants, that have met provincial standards prior to ' +
+    'being hired, will contribute to better educational outcomes while reducing harm and trauma. ' +
+    'As my MLA, I am urging you to strongly advocate to the BC Government and insist they work with ' +
+    'stakeholders to create provincially mandated standards of practice for Education Assistants. ' +
+    '\n\n' +
+    'Sincerely,\n' +
+    '[your name will go here]\n' +
+    '[your email address will go here] [your location will go here]';
 }
 

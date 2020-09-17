@@ -1,9 +1,15 @@
 
 <app-header></app-header>
-<mat-grid-list cols="1" style = "padding-left: 10%; padding-right: 10%">
-  <app-textbox></app-textbox>
-  <app-inputcontainer></app-inputcontainer>
-  <app-submitbutton></app-submitbutton>
+<mat-grid-list cols="1" style = "padding-left: 10%; padding-right: 10%; display: flex; justify-content: center">
+  <div>
+    <app-textbox [event]="clickedEvent"></app-textbox>
+    <app-inputcontainer [event]="clickedEvent"></app-inputcontainer>
+    <app-submitbutton [event]="clickedEvent" (eventEmitter)="childEventClicked($event)"></app-submitbutton>
+  </div>
+  <div>
+    <app-thankyoupage [event]="clickedEvent"></app-thankyoupage>
+  </div>
+
 
 </mat-grid-list>
 

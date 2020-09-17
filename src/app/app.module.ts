@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
@@ -15,6 +14,9 @@ import { SubmitbuttonComponent } from './components/submitbutton/submitbutton.co
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import {HttpClientModule} from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ThankyoupageComponent } from './components/thankyoupage/thankyoupage.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import {MatRadioModule} from '@angular/material/radio';
     TextboxComponent,
     InputcontainerComponent,
     SubmitbuttonComponent,
+    ThankyoupageComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatCheckboxModule,
     MatRadioModule,
     FormsModule,
+    HttpClientModule,
+    MatSnackBarModule,
 
   ],
   providers: [],
