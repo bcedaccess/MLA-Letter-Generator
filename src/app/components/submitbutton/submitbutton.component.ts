@@ -105,6 +105,7 @@ export class SubmitbuttonComponent implements OnInit, AfterViewInit {
     letter = letter.replace(this.pcMark, postalcode);
     letter = letter.replace(this.mpNameMark, mp.name);
     letter = letter.replace(' To date, there are no standards of practice for Education ' + 'Assistants in BC.', '<strong> To date, there are no standards of practice for Education ' + 'Assistants in BC.</strong>');
+    letter = letter.replace('\n', '<br>');
 
     return letter;
   }
