@@ -45,7 +45,7 @@ app.post('/send', (req, res) => {
     to: data.mp.email, // list of receivers
     cc: 'letters@bcedaccess.com',
     subject: 'Action Required: Education Assistants need Standards of Practice', // Subject line
-    text: data.letterData// plain text body
+    html: data.letterData// plain text body
   };
   transporter.sendMail(mailOptions, function (err, info) {
     if(err) {
