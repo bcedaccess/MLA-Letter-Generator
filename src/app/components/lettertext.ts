@@ -22,7 +22,7 @@ export class LetterText {
     'has standards of practice, that is, except for Education Assistants. This is a safety issue. This is ' +
     'unacceptable.\n\n' +
     'Consistently educated, knowledgeable Education Assistants, that have met provincial standards prior to ' +
-    'being hired, will contribute to better educational outcomes while reducing harm and trauma. ' +
+    'being hired, will contribute to better educational outcomes while reducing harm and trauma.\n\n ' +
     'As my MLA, I am urging you to strongly advocate to the BC Government and insist they work with ' +
     'stakeholders to create provincially mandated standards of practice for Education Assistants. ' +
     '\n\n' +
