@@ -13,6 +13,13 @@ export class AppComponent implements AfterViewInit{
 
   @ViewChild(InputcontainerComponent, {static: false}) inputs: InputcontainerComponent;
   @ViewChild(SubmitbuttonComponent, {static: false}) submit: SubmitbuttonComponent;
+
+  public clickedEvent: Event;
+
+  childEventClicked(event: Event): void {
+    this.clickedEvent = event;
+  }
+
   ngAfterViewInit(): void {
     console.log('Hello ', this.inputs.email);
     this.submit.inputsFormGroup = this.inputs;

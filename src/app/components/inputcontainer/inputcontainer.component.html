@@ -1,4 +1,4 @@
-<div style="width: 100%">
+<div style="width: 100%" *ngIf="!event">
   <form [formGroup]="myForm">
       <mat-form-field>
         <mat-label>First Name</mat-label>
@@ -40,6 +40,6 @@
 
 
   <mat-form-field style="width: 100%">
-    <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize">{{letterText}}</textarea>
+    <textarea [formControl]="letter" type="html" matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" [innerHTML]="letterText"></textarea>
   </mat-form-field>
 </div>
