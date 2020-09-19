@@ -1,6 +1,6 @@
 export class LetterText {
 
-  public static text: string = 'Dear [MLA’s name will go here],\n' +
+  public static text: string = 'Dear [MLA’s name will go here],\n\n' +
     'Education Assistants play a crucial role in our education system – they support all students, and ' +
     'predominantly children with disabilities. To date, there are no standards of practice for Education ' +
     'Assistants in BC. Provincially mandated standards of practice for Education Assistants are overdue. ' +
@@ -26,7 +26,7 @@ export class LetterText {
     'As my MLA, I am urging you to strongly advocate to the BC Government and insist they work with ' +
     'stakeholders to create provincially mandated standards of practice for Education Assistants. ' +
     '\n\n' +
-    'Sincerely,\n' +
+    'Sincerely,\n\n' +
     '[your name will go here]\n' +
     '[your email address will go here] [your location will go here]';
 }
