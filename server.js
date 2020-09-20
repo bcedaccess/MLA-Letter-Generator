@@ -9,8 +9,6 @@ const app = express();
 
 if(!process.env.PRODUCTION){
   app.use(express.static('./src/'))
-
-
   app.get('./*', function(req,res) {
     res.sendFile(path.join('src/index.html'));
   });

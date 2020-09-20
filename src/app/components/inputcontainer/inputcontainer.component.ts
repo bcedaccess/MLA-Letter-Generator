@@ -4,6 +4,8 @@ import {MatInput} from '@angular/material/input';
 import {FormControl, FormGroup, Validators, ReactiveFormsModule} from '@angular/forms';
 import {LetterText} from '../lettertext';
 import {MatRadioGroup} from '@angular/material/radio';
+import {MLA} from '../missingmlas';
+import {SnackBarService} from '../snackbar.service';
 
 @Component({
   selector: 'app-inputcontainer',
@@ -12,7 +14,7 @@ import {MatRadioGroup} from '@angular/material/radio';
 })
 export class InputcontainerComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+  constructor(private snackbar: SnackBarService) { }
   @Input() event: Event;
   selectedMember: string;
   member;
@@ -94,6 +96,17 @@ export class InputcontainerComponent implements OnInit, AfterViewInit {
         this.members.push(m.name + ', ' + m.party_name);
         this.mpData.set(m.name + ', ' + m.party_name, m);
       });
+
+      if (this.members.length === 0){
+        this.snackbar.openSnackBar('We can\'t find a MLA in your district, please choose from the above MLAs.', 'Dismiss');
+
+
+        MLA.mlas.forEach((m) => {
+          this.members.push(m.name + ', ' + m.party_name);
+          this.mpData.set(m.name + ', ' + m.party_name, m);
+        });
+
+      }
 
 
 

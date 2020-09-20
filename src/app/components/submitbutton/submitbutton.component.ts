@@ -102,7 +102,7 @@ export class SubmitbuttonComponent implements OnInit, AfterViewInit {
     let letter: string = this.inputsFormGroup.letter.value;
     letter = letter.replace(this.firstNameMark, firstname + ' ' + lastname);
     letter = letter.replace(this.emailNameMark, email);
-    letter = letter.replace(this.pcMark, postalcode);
+    letter = letter.replace(this.pcMark, postalcode.toUpperCase());
     letter = letter.replace(this.mpNameMark, mp.name);
     letter = letter.replace(' To date, there are no standards of practice for Education ' + 'Assistants in BC.', '<strong> To date, there are no standards of practice for Education ' + 'Assistants in BC.</strong>');
     letter = letter.replace('\n', '<br>\n');
