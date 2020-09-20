@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "development": "node server.js & ng serve --proxy-config proxy.config.json",
+    "development_windows": "ng serve --proxy-config proxy.config.json & node server.js",
     "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
