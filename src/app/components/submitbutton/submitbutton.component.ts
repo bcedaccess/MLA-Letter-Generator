@@ -91,7 +91,7 @@ export class SubmitbuttonComponent implements OnInit, AfterViewInit {
       firstname: firstName.value,
       lastname: lastName.value,
       email: email.value,
-      postalcode: postalCode.value,
+      postalcode: postalCode.value.toUpperCase(),
       mp: mpData,
       letterData: this.convertLetterString(firstName.value, lastName.value, email.value, postalCode.value, mpData)
     };
