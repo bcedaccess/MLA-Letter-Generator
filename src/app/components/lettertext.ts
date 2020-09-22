@@ -23,7 +23,7 @@ export class LetterText {
     'unacceptable.\n\n' +
     'Consistently educated, knowledgeable Education Assistants, that have met provincial standards prior to ' +
     'being hired, will contribute to better educational outcomes while reducing harm and trauma.\n\n' +
-    'As my MLA, I am urging you to strongly advocate to the BC Government and insist they work with ' +
+    'As my MLA candidate, I am urging you to strongly advocate to the BC Government and insist they work with ' +
     'stakeholders to create provincially mandated standards of practice for Education Assistants. ' +
     '\n\n' +
     'Sincerely,\n\n' +

@@ -15,6 +15,7 @@ import {SnackBarService} from '../snackbar.service';
 export class InputcontainerComponent implements OnInit, AfterViewInit {
 
   constructor(private snackbar: SnackBarService) { }
+
   @Input() event: Event;
   selectedMember: string;
   member;
