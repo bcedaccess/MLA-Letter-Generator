@@ -67,6 +67,7 @@ export class InputcontainerComponent implements OnInit, AfterViewInit {
 
   }
 
+  // TODO: Be able to parse for both MLAs and Candidates
   onPostalCodeChange(): void {
     if (this.postalCode.invalid){
       console.log('Postal not done');
