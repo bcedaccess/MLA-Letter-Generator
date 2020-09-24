@@ -17,7 +17,7 @@ export class TextboxComponent implements OnInit {
     'You are invited to use this form to call on the BC Government to work with stakeholders to ' +
     'create provincially mandated standards of practice for Education Assistants. As a vital member ' +
     'of the teaching team, Education Assistants need consistent training prior to being hired, along ' +
-    'with better working conditions. Fill in your information and click “Send to your MLA”. You can ' +
+    'with better working conditions. Fill in your information and click “Send to your MLA Candidate”. You can ' +
     'also add your own personal feedback before sending.';
   @Input() event: Event;
   constructor() { }
