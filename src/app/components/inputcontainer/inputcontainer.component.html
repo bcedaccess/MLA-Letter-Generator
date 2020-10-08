@@ -26,13 +26,17 @@
 
   </form>
   <div style="width: 100%">
-    <h4>Select Your Representative</h4>
+    <h4>Your email will be sent to:</h4>
     <div id = "#repConatiner" style = "width: 100%"></div>
-    <mat-radio-group [(ngModel)]="selectedMember" [formControl]="radioButtons" #radioGroup  (change)="onRadioChange()">
-      <mat-radio-button matInput ngDefaultControl *ngFor="let member of members" [value]="member">
+      <p  *ngFor="let member of members">
         {{member}}
-      </mat-radio-button>
-    </mat-radio-group>
+      </p>
+
+<!--    <mat-radio-group [(ngModel)]="selectedMember" [formControl]="radioButtons" #radioGroup  (change)="onRadioChange()">-->
+<!--      <mat-radio-button matInput ngDefaultControl *ngFor="let member of members" [value]="member">-->
+<!--        {{member}}-->
+<!--      </mat-radio-button>-->
+<!--    </mat-radio-group>-->
 
 
   </div>

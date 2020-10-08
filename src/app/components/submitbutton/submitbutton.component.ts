@@ -58,17 +58,22 @@ export class SubmitbuttonComponent implements OnInit, AfterViewInit {
       this.inputsFormGroup.postalCode.markAsTouched();
       invalid = true;
     }
-    if (!mp){
+    if (!this.inputsFormGroup.valid){
       invalid = true;
-      this.snackbar.openSnackBar('Please Select a Representative', 'Dismiss');
+      this.snackbar.openSnackBar('No Selected Candidates', 'Dismiss');
     }
     if (invalid){
       return;
     }
-    const mpData = this.inputsFormGroup.mpData.get(mp);
-    const data = this.createPostData(firstName, lastName, email, postalCode, mpData);
+    const mpData = this.inputsFormGroup.mpData.values();
+    const data = [];
+    for (const m of mpData) {
+      data.push(this.createPostData(firstName, lastName, email, postalCode, m));
+    }
+    // const data = this.createPostData(firstName, lastName, email, postalCode, mpData);
     console.log('data', data);
-    this.http.post<any>('./send/', data).subscribe(() => {
+    this.snackbar.openSnackBar('Submitting... (may take a minute or two)', 'Dismiss');
+    this.http.post<any>('./sendall/', data).subscribe(() => {
       this.eventEmitter.emit(event);
 
     }, (res) => {

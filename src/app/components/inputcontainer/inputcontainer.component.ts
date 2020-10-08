@@ -6,6 +6,7 @@ import {LetterText} from '../lettertext';
 import {MatRadioGroup} from '@angular/material/radio';
 import {MLA} from '../missingmlas';
 import {SnackBarService} from '../snackbar.service';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 
 @Component({
   selector: 'app-inputcontainer',
@@ -14,9 +15,10 @@ import {SnackBarService} from '../snackbar.service';
 })
 export class InputcontainerComponent implements OnInit, AfterViewInit {
 
-  constructor(private snackbar: SnackBarService) { }
+  constructor(private snackbar: SnackBarService, private http: HttpClient) { }
 
   @Input() event: Event;
+  valid = false;
   selectedMember: string;
   member;
   members = [];
@@ -80,34 +82,48 @@ export class InputcontainerComponent implements OnInit, AfterViewInit {
     console.log(pc);
     fetch(`https://represent.opennorth.ca/postcodes/${pc}/`).then((response) => {
       return response.json();
-    }).then((json) => {
+    }).then(async (json) => {
       // console.log(json);
       const reps = json.representatives_centroid;
+      const dis = [];
       const mlas = [];
-      reps.forEach((rep) => {
-        if (rep.elected_office === 'MLA'){
-          console.log(rep);
-          mlas.push(rep);
+      for (const b of json.boundaries_centroid) {
+        if (b.boundary_set_name === 'British Columbia electoral district' && !dis.includes(b.name)){
+          dis.push(b.name);
+          const params = new HttpParams();
+          params.set('dist', b.name);
+          const r = await this.http.get<any>(`/reps/:${b.name.replace(' ', '%20')}`, {}).toPromise();
+          r.forEach( d => {
+            if (!mlas.includes(d)){
+              mlas.push(d);
+            }
+          });
         }
-      });
+      }
+      console.log('MLAS', mlas);
+
+      // reps.forEach((rep) => {
+      //   if (rep.elected_office === 'MLA'){
+      //     console.log(rep);
+      //     mlas.push(rep);
+      //   }
+      // });
+
+
       return mlas;
     }).then((mlas) => {
       this.members = [];
+      this.valid = false;
 
       mlas.forEach((m) => {
         this.members.push(m.name + ', ' + m.party_name);
         this.mpData.set(m.name + ', ' + m.party_name, m);
+        this.valid = true;
       });
 
       if (this.members.length === 0){
-        this.snackbar.openSnackBar('We can\'t find a MLA in your district, please choose from the above MLAs.', 'Dismiss');
-
-
-        MLA.mlas.forEach((m) => {
-          this.members.push(m.name + ', ' + m.party_name);
-          this.mpData.set(m.name + ', ' + m.party_name, m);
-        });
-
+        this.members.push('We can\'t find a MLA Candidate in your district (or one with a valid email)');
+        this.valid = false;
       }
 
 
