@@ -1,6 +1,12 @@
 export class LetterText {
 
-  public static text: string = 'Dear [MLA Candidate\'s name will go here],\n\n' +
+  /* The follow string will be the default text of the letter generator.
+  * You can add in your own tags where the data will be changed.
+  * For example [MLA\'s name will go here] will be replaced with the MLA's name
+  * before the email is sent. You can look in submitbutton.compontent.ts in order to see all the tags.
+  * You can change them as well, but the text must match exactly.*/
+
+  public static text: string = 'Dear [MLA\'s name will go here],\n\n' +
     'Education Assistants play a crucial role in our education system – they support all students, and ' +
     'predominantly children with disabilities. To date, there are no standards of practice for Education ' +
     'Assistants in BC. Provincially mandated standards of practice for Education Assistants are overdue. ' +
@@ -23,7 +29,7 @@ export class LetterText {
     'unacceptable.\n\n' +
     'Consistently educated, knowledgeable Education Assistants, that have met provincial standards prior to ' +
     'being hired, will contribute to better educational outcomes while reducing harm and trauma.\n\n' +
-    'As my MLA candidate, I am urging you to strongly advocate to the BC Government and insist they work with ' +
+    'As my MLA, I am urging you to strongly advocate to the BC Government and insist they work with ' +
     'stakeholders to create provincially mandated standards of practice for Education Assistants. ' +
     '\n\n' +
     'Sincerely,\n\n' +

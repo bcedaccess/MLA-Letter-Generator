@@ -131,7 +131,7 @@ const mlas = []
 fs.createReadStream('data/Candidate-Emails.csv')
   .pipe(csv())
   .on('data', row => {
-    m = new MLA(row['Electoral District'], row['Candidate Ballot Name'], row['Email'], row['Affiliation'])
+    m = new MLA(row['Electoral District'], row['Name'], row['Email'], row['Party'])
     mlas.push(m)
   }).on('end', () => {
     console.log("file finished")

@@ -15,7 +15,7 @@ export class SubmitbuttonComponent implements OnInit, AfterViewInit {
   firstNameMark = '[your name will go here]';
   emailNameMark = '[your email address will go here]';
   pcMark = '[your location will go here]';
-  mpNameMark = '[MLA Candidate\'s name will go here]';
+  mpNameMark = '[MLA\'s name will go here]';
   @Output() eventEmitter = new EventEmitter<Event>();
   @Input() inputsFormGroup: InputcontainerComponent;
   @Input() event: Event;
