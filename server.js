@@ -15,10 +15,10 @@ if(!process.env.PRODUCTION){
     res.sendFile(path.join('src/index.html'));
   });
 } else{
-  app.use(express.static(__dirname + '/dist/BCEdAccess-Letter-Generator'));
+  app.use(express.static(__dirname + '/dist/MLA-Letter-Generator'));
   app.get('./*', function(req,res) {
 
-    res.sendFile(path.join(__dirname+'/dist/BCEdAccess-Letter-Generator/index.html'));
+    res.sendFile(path.join(__dirname+'/dist/MLA-Generator/index.html'));
   });
 }
 app.use(express.json());
